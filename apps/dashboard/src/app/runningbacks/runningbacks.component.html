@@ -1,0 +1,18 @@
+<div class="component-container">
+  <div class="list-component">
+    <runningback-angular-runningbacks-list
+      [runningbacks]="allRunningbacks$ | async"
+      (selected)="selectRunningback($event)"
+      (deleted)="deleteRunningback($event)"
+    >
+    </runningback-angular-runningbacks-list>
+  </div>
+  <div class="details-component">
+    <runningback-angular-runningback-details
+      [runningback]="selectedRunningback$ | async"
+      (saved)="saveRunningback($event)"
+      (cancelled)="resetForm()"
+    >
+    </runningback-angular-runningback-details>
+  </div>
+</div>

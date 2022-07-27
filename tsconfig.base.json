@@ -18,7 +18,12 @@
     "paths": {
       "@runningback-angular/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
-      ]
+      ],
+      "@runningback-angular/core-data": ["libs/core-data/src/index.ts"],
+      "@runningback-angular/core-state": ["libs/core-state/src/index.ts"],
+      "@runningback-angular/material": ["libs/material/src/index.ts"],
+      "@runningback-angular/ui-login": ["libs/ui-login/src/index.ts"],
+      "@runningback-angular/environment": ["libs/environment/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

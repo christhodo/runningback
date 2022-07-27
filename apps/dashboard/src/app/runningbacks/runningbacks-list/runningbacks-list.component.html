@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-title>
+    Runningbacks
+  </mat-card-title>
+  <mat-card-content>
+    <mat-list data-cy="runningbacks-list">
+      <mat-list-item
+        *ngFor="let runningback of runningbacks"
+        attr.data-cy="runningback-{{ runningback.id }}-item"
+        class="mat-list-option"
+        (click)="selected.emit(runningback)"
+      >
+        <span
+          matLine
+          attr.data-cy="runningback-{{ runningback.id }}-item-title"
+          >{{ runningback.title }}</span
+        >
+        <button
+          *ngIf="!readonly"
+          attr.data-cy="delete-runningback-{{ runningback.id }}-btn"
+          mat-icon-button
+          type="button"
+          color="warn"
+          (click)="deleted.emit(runningback); $event.stopImmediatePropagation()"
+        >
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

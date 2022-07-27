@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@runningback-angular/api-interfaces';
+import { AuthGuardService } from '@runningback-angular/core-data';
 
 @Component({
   selector: 'runningback-angular-root',
@@ -8,6 +7,10 @@ import { Message } from '@runningback-angular/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title = '';
+
+  links = [{ path: '/runningbacks', icon: 'view_list', title: 'RunningBacks' }];
+
+  userIsAuthenticated = this.authService.isAuthenticated;
+  constructor(private authService: AuthGuardService) {}
 }
